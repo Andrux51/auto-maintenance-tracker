@@ -3,20 +3,20 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
 
 
 @RouteConfig([
-    {
-        path: '/dashboard',
-        name: 'Dashboard',
-        component: AppComponent,
-        useAsDefault: true
-    }, {
-        // path: '/heroes',
-        // name: 'Heroes',
-        // component: HeroesComponent
-    }, {
-        // path: '/heroes/:id',
-        // name: 'HeroDetail',
-        // component: HeroDetailComponent
-    }
+    // {
+    //     path: '/dashboard',
+    //     name: 'Dashboard',
+    //     component: DashboardComponent,
+    //     useAsDefault: true
+    // }, {
+    //     // path: '/vehicles',
+    //     // name: 'Vehicles',
+    //     // component: VehiclesComponent
+    // }, {
+    //     // path: '/vehicles/:id',
+    //     // name: 'VehicleDetail',
+    //     // component: VehicleDetailComponent
+    // }
 ])
 @Component({
     selector: 'amt-app',
@@ -24,11 +24,9 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
     providers: [ROUTER_PROVIDERS],
     template: `
         <h1>{{title}}</h1>
+        <router-outlet></router-outlet>
     `
 })
 export class AppComponent {
     title: string = 'Auto Maintenance Tracker';
-
-    constructor() {
-    }
 }
