@@ -2,8 +2,9 @@
   "name": "auto-maintenance-tracker",
   "version": "0.1.0",
   "scripts": {
-    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" \"npm run gulp:dev\" ",
+    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run server\" \"npm run gulp:dev\" ",
     "lite": "lite-server",
+    "server": "node server.js",
     "gulp:dev": "gulp dev",
     "gulp:prod": "gulp prod",
     "gulp:w": "gulp watch",

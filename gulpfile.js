@@ -105,7 +105,7 @@ gulp.task('js:@angular', function() {
 });
 
 gulp.task('build:index', function() {
-    return gulp.src(['./client/index.html', './client/systemjs.config.js'])
+    return gulp.src(['./client/index.html', './client/favicon.ico', './client/systemjs.config.js'])
         .pipe(plumber())
         .pipe(gulp.dest('./dist'));
 });
