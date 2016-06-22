@@ -53,14 +53,19 @@ gulp.task('css:vendor', function() {
     return gulp.src(vendorCss)
         .pipe(plumber())
         .pipe(concat('vendor.css'))
+        .pipe(cleanCSS({
+            compatibility: 'ie8'
+        }))
         .pipe(gulp.dest(cssDest));
 });
 
 gulp.task('js:vendor', ['js:@angular', 'js:rxjs'], function() {
     var vendorJs = [
         'node_modules/core-js/client/shim.min.js',
+        'node_modules/core-js/client/shim.min.js.map',
         'node_modules/zone.js/dist/zone.js',
         'node_modules/reflect-metadata/Reflect.js',
+        'node_modules/reflect-metadata/Reflect.js.map',
         'node_modules/systemjs/dist/system.src.js',
 
         'node_modules/bootstrap/dist/js/bootstrap.js'
@@ -72,7 +77,7 @@ gulp.task('js:vendor', ['js:@angular', 'js:rxjs'], function() {
 });
 
 gulp.task('js:rxjs', function() {
-    return gulp.src('node_modules/rxjs/**/*.js')
+    return gulp.src(['node_modules/rxjs/**/*.js', 'node_modules/rxjs/**/*.js.map'])
         .pipe(plumber())
         .pipe(gulp.dest(jsDest + '/vendor/rxjs'));
 });

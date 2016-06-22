@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
+import { DashboardComponent } from './dashboard.component';
 
 @RouteConfig([
-    // {
-    //     path: '/dashboard',
-    //     name: 'Dashboard',
-    //     component: DashboardComponent,
-    //     useAsDefault: true
+    {
+        path: '/dashboard',
+        name: 'Dashboard',
+        component: DashboardComponent,
+        useAsDefault: true
     // }, {
     //     // path: '/vehicles',
     //     // name: 'Vehicles',
@@ -16,7 +17,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
     //     // path: '/vehicles/:id',
     //     // name: 'VehicleDetail',
     //     // component: VehicleDetailComponent
-    // }
+    }
 ])
 @Component({
     selector: 'amt-app',
